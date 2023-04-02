@@ -123,6 +123,14 @@ h2 {
     height: 100%;
 }
 
+.carousel-slide-description {
+    width: max-content;
+    white-space: no-wrap;
+    position: absolute;
+    color: var(--gray);
+    bottom: -7%;
+}
+
 .carousel-nav-button {
     opacity: 0;
     position: absolute;
@@ -303,7 +311,7 @@ h2 {
     transition: all 1s;
 }
 
-.gallery-content .grid .grid-image {    
+.gallery-content .grid .grid-image {
     max-height: 300px;
     border: solid transparent 4px;
 }
@@ -311,7 +319,7 @@ h2 {
 @media only screen and (max-width: 600px) {
     .gallery-content .grid .grid-image {
         /* NOTE wide images appear stretched on mobile Safari and gap is smaller (only on actual mobile device or in Simulator) */
-        max-width: 100%; 
+        max-width: 100%;
         height: auto;
     }
 }
