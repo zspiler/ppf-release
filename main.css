@@ -1,5 +1,5 @@
 :root {
-    --cream: rgb(244, 238, 238);
+    --cream: #f5f5f5;
     --menu-cream: rgb(236, 228, 228);
     --gray: rgb(186, 186, 186);
     --menu-width: 300px;
@@ -112,15 +112,30 @@ h2 {
     pointer-events: none;
 }
 
+
+@media only screen and (max-width: 1024px) {
+    .carousel-image:not(:only-child) {
+        max-height: 55%;
+    }
+}
+
 .carousel.hidden {
     display: none;
 }
 
 .carousel-slide {
     flex-shrink: 0;
-    gap: 40px;
+    gap: 100px;
     width: 100%;
     height: 100%;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .carousel-slide {
+        flex-direction: column;
+        gap: 50px;
+    }
 }
 
 .carousel-slide-description {
@@ -137,7 +152,7 @@ h2 {
     padding: 20px;
     font-size: 24px;
     mix-blend-mode: difference;
-    color: rgb(205, 204, 204);
+    color: rgb(173, 173, 173);
     transition: opacity 0.4s;
 }
 
@@ -275,15 +290,22 @@ h2 {
     z-index: -10;
     transition: all 1.5s ease-in-out;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .gallery-overlay {
+        justify-content: start;
+    }
 }
 
 .gallery-content {
-    height: 100%;
+    height: 50%;
     width: 90%;
     margin: 0 auto;
     display: flex;
-    gap: 25px;
     flex-direction: column;
     align-items: center;
 }
@@ -307,21 +329,15 @@ h2 {
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    align-content: center;
     padding-bottom: 50px;
     transition: all 1s;
 }
 
 .gallery-content .grid .grid-image {
-    max-height: 300px;
+    max-height: 150px;
     border: solid transparent 4px;
-}
-
-@media only screen and (max-width: 600px) {
-    .gallery-content .grid .grid-image {
-        /* NOTE wide images appear stretched on mobile Safari and gap is smaller (only on actual mobile device or in Simulator) */
-        max-width: 100%;
-        height: auto;
-    }
 }
 
 .gallery-overlay.open .grid .grid-image:hover {
