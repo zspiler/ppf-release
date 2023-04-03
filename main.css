@@ -295,12 +295,6 @@ h2 {
     align-items: center;
 }
 
-@media only screen and (max-width: 600px) {
-    .gallery-overlay {
-        justify-content: start;
-    }
-}
-
 .gallery-content {
     height: 50%;
     width: 90%;
@@ -308,20 +302,13 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .gallery-overlay.open {
     opacity: 1;
     z-index: 10000;
 }
-
-.gallery-title {
-    font-size: 30px;
-    color: var(--void);
-    margin-top: 50px;
-    margin-bottom: 25px;
-}
-
 
 .gallery-content .grid {
     display: flex;
