@@ -7,13 +7,24 @@
     --carousel-height: 600px;
 }
 
+
+@font-face {
+    font-family: 'CustomSerif';
+    /* src: url('PlayfairDisplay-Regular.ttf'); */
+    /* src: url('Gloock-Regular.ttf'); */
+    src: url(4114a151797af532cace.ttf)
+}
+
 body {
     position: fixed;
     height: 100%;
     width: 100vw;
     background: var(--cream);
     margin: 0;
-    font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+    /* font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif; */
+    /* font-family: "Times New Roman", Times, serif; */
+
+    font-family: 'CustomSerif';
     font-weight: 100;
     animation: fadeIn 2.5s;
 }
@@ -50,6 +61,13 @@ h2 {
     border: var(--void) 1px solid;
     cursor: pointer;
 }
+
+/* @media (hover: none) {
+    .bubble-button:hover {
+        border: none;
+    }
+} */
+
 
 #custom-cursor {
     height: auto;
@@ -99,12 +117,12 @@ h2 {
 .carousel {
     height: var(--carousel-height);
     width: 100%;
-    user-select: none;
+    /* user-select: none; */
     cursor: none;
-    -webkit-user-drag: none;
+    /* -webkit-user-drag: none;
     -moz-user-select: none;
     -webkit-user-select: none;
-    -ms-user-select: none;
+    -ms-user-select: none; */
 }
 
 .carousel-image {
@@ -215,10 +233,12 @@ h2 {
     font-size: 75px;
     z-index: 1000;
     mix-blend-mode: exclusion;
+    pointer-events: none;
 }
 
 .menu.visible {
     opacity: 1;
+    pointer-events: unset;
 }
 
 .menu-item {
@@ -368,6 +388,7 @@ h2 {
     transition: transform 1.5s;
 }
 
+
 .nav-button.home .about-text {
     transform: translateX(300px);
 }
@@ -380,7 +401,7 @@ h2 {
     height: 100%;
     width: 0px;
     overflow: hidden;
-    transition: width 1.8s ease-in-out;
+    transition: width 1.5s ease-in-out;
     font-size: 18px;
     flex-direction: column;
     z-index: 100;
