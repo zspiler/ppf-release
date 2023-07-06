@@ -13,7 +13,7 @@ body {
     width: 100vw;
     background: var(--cream);
     margin: 0;
-    font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+    font-family: Inconsolata, Verdana, sans-serif;
     font-weight: 100;
     animation: fadeIn 2.5s;
 }
