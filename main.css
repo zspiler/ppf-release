@@ -7,24 +7,13 @@
     --carousel-height: 600px;
 }
 
-
-@font-face {
-    font-family: 'CustomSerif';
-    /* src: url('PlayfairDisplay-Regular.ttf'); */
-    /* src: url('Gloock-Regular.ttf'); */
-    src: url(4114a151797af532cace.ttf)
-}
-
 body {
     position: fixed;
     height: 100%;
     width: 100vw;
     background: var(--cream);
     margin: 0;
-    /* font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif; */
-    /* font-family: "Times New Roman", Times, serif; */
-
-    font-family: 'CustomSerif';
+    font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
     font-weight: 100;
     animation: fadeIn 2.5s;
 }
@@ -61,13 +50,6 @@ h2 {
     border: var(--void) 1px solid;
     cursor: pointer;
 }
-
-/* @media (hover: none) {
-    .bubble-button:hover {
-        border: none;
-    }
-} */
-
 
 #custom-cursor {
     height: auto;
@@ -117,21 +99,15 @@ h2 {
 .carousel {
     height: var(--carousel-height);
     width: 100%;
-    /* user-select: none; */
     cursor: none;
-    /* -webkit-user-drag: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none; */
 }
 
 .carousel-image {
     max-height: 100%;
-    max-width: 65%;
+    max-width: 100%;
     pointer-events: none;
     display: block;
 }
-
 
 @media only screen and (max-width: 1024px) {
     .carousel-image:not(:only-child) {
@@ -147,52 +123,53 @@ h2 {
 .carousel-cell {
     width: 100%;
     height: var(--carousel-height);
-    /* need to set exact height as parent has height 0 */
+    /* exact height is necessary as parent has height 0 */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cell-images {
+    width: 65%;
+    /* NOTE height specified here is arbitrary, but has to be set? */
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 100px;
+    flex: 1;
+    transition: opacity 0.5s;
 }
 
+.preview .cell-images {
+    opacity: 0.95;
+}
 
 @media only screen and (max-width: 1024px) {
-    .carousel-cell {
+    .cell-images {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .cell-images:not(:only-child) {
+        /* if cell has description center the images and description */
+        flex: 0.5;
     }
 }
 
 .carousel-slide-description {
+    flex: 0.05;
     width: max-content;
     white-space: no-wrap;
-    position: absolute;
     color: var(--gray);
-    bottom: -7%;
-}
-
-.preview-image-container {
-    height: 100%;
-    width: 100%;
-    display: none;
-    user-select: none;
-    -webkit-user-drag: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-}
-
-.preview-image-container.visible {
     display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition: color 0.5s;
 }
 
-.preview-image {
-    max-width: 65%;
-    max-height: var(--carousel-height);
-    opacity: 0.95;
-}
-
-.preview-image[src=""] {
-    display: none;
+.preview .carousel-slide-description {
+    color: transparent;
 }
 
 /* MENU */
@@ -388,7 +365,6 @@ h2 {
     transition: transform 1.5s;
 }
 
-
 .nav-button.home .about-text {
     transform: translateX(300px);
 }
@@ -401,7 +377,7 @@ h2 {
     height: 100%;
     width: 0px;
     overflow: hidden;
-    transition: width 1.5s ease-in-out;
+    transition: width 1.8s ease-in-out;
     font-size: 18px;
     flex-direction: column;
     z-index: 100;
