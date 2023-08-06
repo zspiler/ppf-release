@@ -88,7 +88,7 @@ h2 {
     transition: opacity 1s ease-out;
 }
 
-.main.hidden {
+.main.transparent {
     opacity: 0;
 }
 
@@ -112,11 +112,6 @@ h2 {
         max-height: 50%;
     }
 }
-
-.carousel.hidden {
-    display: none;
-}
-
 
 .carousel-cell {
     width: 100%;
@@ -168,6 +163,10 @@ h2 {
 
 .preview .carousel-slide-description {
     color: transparent;
+}
+
+.carousel-cell-spinner {
+    position: absolute;
 }
 
 /* MENU */
@@ -442,4 +441,10 @@ h2 {
     cursor: pointer;
     background: rgba(231, 67, 67, 0.8);
     color: white;
+}
+
+/* Utils */
+
+.hidden {
+    display: none;
 }
