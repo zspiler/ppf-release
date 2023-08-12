@@ -236,11 +236,7 @@
     .cell-images {
         flex-direction: column;
         gap: 20px;
-    }
-
-    .cell-images:not(:only-child) {
-        /* if cell has description center the images and description */
-        flex: 0.5;
+        flex: 0.8;
     }
 }
 
@@ -353,7 +349,7 @@
     --gray: rgb(186, 186, 186);
     --menu-width: 300px;
     --void: rgb(39, 39, 39);
-    --carousel-height: 600px;
+    --carousel-height: 70vh;
 }
 
 body {
