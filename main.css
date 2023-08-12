@@ -103,8 +103,6 @@
     justify-content: start;
     align-items: start;
     font-size: 75px;
-    z-index: 1000;
-    mix-blend-mode: exclusion;
     pointer-events: none;
 }
 
@@ -114,12 +112,13 @@
 }
 
 .menu-item {
+    z-index: 1000;
     white-space: nowrap;
     text-align: center;
     overflow: hidden;
     padding: 2px 0px;
     user-select: none;
-    color: var(--void);
+    color: var(--gray);
     transform: translateX(-400px);
     /*  
     Safari is silly so we need to use 'all' instead of listing specific properties here.
@@ -127,6 +126,25 @@
     */
     transition: all 1s;
 }
+
+.menu-item.selected {
+    color: rgb(198, 197, 197);
+    letter-spacing: 6px;
+    cursor: default;
+    mix-blend-mode: exclusion;
+}
+
+@media only screen and (max-width: 480px) {
+    .menu-item {
+        color: rgb(157, 157, 157);
+    }
+
+    .menu-item.selected {
+        mix-blend-mode: unset;
+        color: var(--void);
+    }
+}
+
 
 .menu.visible .menu-item {
     transform: translateX(0px);
@@ -157,12 +175,6 @@
     text-decoration: underline;
 }
 
-.menu-item.selected {
-    color: var(--gray);
-    letter-spacing: 6px;
-    cursor: default;
-}
-
 .menu-close-button {
     position: absolute;
     top: 0px;
@@ -172,6 +184,14 @@
     height: var(--carousel-height);
     width: 100%;
     cursor: none;
+    transition: all 0.8s;
+}
+
+@media only screen and (max-width: 480px) {
+    .carousel.blurred {
+        filter: blur(4px);
+        opacity: 0.35
+    }
 }
 
 .carousel-image {
