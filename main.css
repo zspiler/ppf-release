@@ -120,11 +120,7 @@
     user-select: none;
     color: var(--gray);
     transform: translateX(-400px);
-    /*  
-    Safari is silly so we need to use 'all' instead of listing specific properties here.
-    If we don't, menu items seem to be in visible position on initial page load.
-    */
-    transition: all 1s;
+    transition: transform 1s, letter-spacing 1s;
 }
 
 .menu-item.selected {
@@ -172,7 +168,7 @@
 
 .menu-item:hover:not(.selected) {
     cursor: pointer;
-    text-decoration: underline;
+    color: var(--void);
 }
 
 .menu-close-button {
@@ -484,4 +480,12 @@ h2 {
 
 .text-center {
     text-align: center;
+}
+
+.preload * {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
 }
