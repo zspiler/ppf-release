@@ -297,7 +297,6 @@
 }
 
 .about-content {
-    /* width: 50vw; */
     width: 75vw;
     margin-top: 20vh;
     margin-bottom: 10vh;
@@ -339,7 +338,14 @@
 .contact {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: start;
+}
+
+
+@media only screen and (max-width: 1400px) {
+    .contact {
+        align-items: center;
+    }
 }
 
 .contact a {
@@ -356,21 +362,51 @@
     color: white;
 }
 
-.client-list {
-    text-align: center;
-    font-size: 15px;
-    list-style-type: none;
-    padding: unset;
-    margin: 0;
+.clients {
+    flex: 50%;
 }
 
 .clients .title {
     margin-bottom: 10px;
 }
 
+.client-list {
+    text-align: center;
+    font-size: 16px;
+    list-style-type: none;
+    padding: unset;
+    margin: 0;
+    font-style: italic;
+}
+
+.description p:first-child {
+    margin-inline-start: 0;
+    margin-block-start: 0;
+}
+
 .description p:last-child {
-    margin-inline-end: 0px;
-    margin-block-end: 0px;
+    margin-inline-start: 0;
+    margin-block-start: 0;
+}
+
+.description-clients-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.description-contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 50%;
+    gap: 35px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .description-clients-container {
+        flex-direction: column;
+        gap: 50px;
+    }
 }
 :root {
     --cream: #f5f5f5;
